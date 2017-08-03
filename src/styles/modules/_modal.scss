@@ -7,10 +7,10 @@
     left: $modal-left;
     background: $modal-bg;
     z-index: $zindex-modal;
-    overflow: hidden;
+    overflow: auto;
     outline: 0;
     -webkit-overflow-scrolling: touch;
-    animation: fadeIn $modal-animation-duration ease;
+    animation: fadeIn $modal-animation-duration ease
 }
 
 // Shell div to position the modal with bottom padding

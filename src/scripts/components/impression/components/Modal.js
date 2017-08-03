@@ -1,26 +1,40 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ModalHeader from './ModalHeader';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
+import { stopPropagation } from '../utils/dom';
 
 /**
  * Modal组件.
  */
-const Modal = ({ size, className, children, ...others }) => {
-    let sizeClass = size ? `modal-${size}` : null;
+export default class Modal extends PureComponent {
+    constructor(props, context) {
+        super(props, context);
 
-    return (
-        <div {...others} className={classnames('modal', className)}>
-            <div className={classnames('modal-dialog', sizeClass)}>
-                <div className="modal-content slideInDown">
-                    {children}
+        stopPropagation();
+    }
+
+    componentWillUnmount() {
+        stopPropagation();
+    }
+
+    render() {
+        let { className, size, children, ...others } = this.props;
+        let sizeClass = size ? `modal-${size}` : null;
+
+        return (
+            <div {...others} className={classnames('modal', className)}>
+                <div className={classnames('modal-dialog', sizeClass)}>
+                    <div className="modal-content slideInDown">
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+}
 
 Modal.propTypes = {
     children: PropTypes.any,
@@ -33,4 +47,4 @@ Modal.Header = ModalHeader;
 Modal.Body = ModalBody;
 Modal.Footer = ModalFooter;
 
-export default Modal;
+// export default Modal;
