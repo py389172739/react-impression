@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import { Card, Row, Col, Progress } from '../components/impression';
 import { CommenTable, Highlight, Breadcrumb } from '../components';
 
@@ -33,10 +32,10 @@ const ProgressView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'import { Progress } from "impression-react";\n\n'}
-                        {'<Progress value="1"/>\n'}
-                        {'<Progress value="25"/>\n'}
-                        {'<Progress value="50"/>\n'}
+                        {`import { Progress } from 'impression-react';\n\n`}
+                        {`<Progress value="1"/>\n`}
+                        {`<Progress value="25"/>\n`}
+                        {`<Progress value="50"/>\n`}
                         {'<Progress value="75"/>'}
                     </Highlight>
                 </Card>
@@ -65,9 +64,9 @@ const ProgressView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'<Progress value="50"/>\n'}
-                        {'<Progress value="50" theme="success"/>\n'}
-                        {'<Progress value="50" theme="warning"/>\n'}
+                        {`<Progress value="50"/>\n`}
+                        {`<Progress value="50" theme="success"/>\n`}
+                        {`<Progress value="50" theme="warning"/>\n`}
                         {'<Progress value="50" theme="danger"/>'}
                     </Highlight>
                 </Card>
@@ -96,9 +95,9 @@ const ProgressView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'<Progress value="50" striped/>\n'}
-                        {'<Progress value="50" theme="success" striped/>\n'}
-                        {'<Progress value="50" theme="warning" striped/>\n'}
+                        {`<Progress value="50" striped/>\n`}
+                        {`<Progress value="50" theme="success" striped/>\n`}
+                        {`<Progress value="50" theme="warning" striped/>\n`}
                         {'<Progress value="50" theme="danger" striped/>'}
                     </Highlight>
                 </Card>

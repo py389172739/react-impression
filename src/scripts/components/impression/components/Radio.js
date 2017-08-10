@@ -1,6 +1,6 @@
 import classnames from 'classnames';
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, PropTypes } from 'react';
+
 /**
  * Radio组件.
  */
@@ -27,18 +27,9 @@ export default class Radio extends PureComponent {
     static defaultProps = {
         disabled: false,
     }
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            time: (new Date()).valueOf() + Math.ceil(Math.random() * 10), // 设置radio id时间戳
-        };
-    }
-
     getValue() {
-        let { value } = this.props, // props内容
-            { main } = this.refs; // dom节点
+        let { value } = this.props,
+            { main } = this.refs;
 
         if(value === undefined) {
             return main.checked;
@@ -51,13 +42,6 @@ export default class Radio extends PureComponent {
 
         main.checked = !!checked;
     }
-
-    onChangeHandle = (event, value) => {
-        let { onChange } = this.props;
-
-        onChange && onChange(event, value);
-    }
-
     // 渲染
     render() {
         let {
@@ -69,16 +53,14 @@ export default class Radio extends PureComponent {
             name,
             onChange,
             children,
-            ...others
+            ...others,
             } = this.props;
-        let { time } = this.state;
 
         return(
             <label
                 {...others}
                 className={classnames('radio', className)}
-                htmlFor={`radio${time}`}
-                >
+                htmlFor={`radio${this._reactInternalInstance._mountOrder}`}>
                 <input
                     ref="main"
                     type="radio"
@@ -87,8 +69,7 @@ export default class Radio extends PureComponent {
                     defaultChecked={defaultChecked}
                     disabled={disabled}
                     onChange={event => onChange && onChange(event, value)}
-                    id={`radio${time}`}
-                    />
+                    id={`radio${this._reactInternalInstance._mountOrder}`} />
                 <div className="radio-addon">
                     <i />
                 </div>
@@ -101,6 +82,7 @@ export default class Radio extends PureComponent {
 // getValue
 Radio.getValue = ref => {
     if(!ref) return undefined;
+
     return ref.getValue();
 };
 

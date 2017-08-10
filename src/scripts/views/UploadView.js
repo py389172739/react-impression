@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, PropTypes } from 'react';
 import { Card, Row, Col, Input, Upload, Icon, Button } from '../components/impression';
 import { Highlight, Breadcrumb, CommenTable } from '../components';
 
@@ -39,9 +38,9 @@ export default class UploadView extends Component {
                             </Row>
                         </Card.Block>
                         <Highlight>
-                            {'import { Upload } from "impression-react";\n\n'}
-                            {'<Input type="file"/>\n'}
-                            {'<Input type="file" placeholder="请上传资质证明"/>\n'}
+                            {`import { Upload } from 'impression-react';\n\n`}
+                            {`<Input type="file"/>\n`}
+                            {`<Input type="file" placeholder="请上传资质证明"/>\n`}
                             {'<Upload btnText="附件" btnStyle="primary"/>'}
                         </Highlight>
                     </Card>
@@ -63,8 +62,8 @@ export default class UploadView extends Component {
                             </Row>
                         </Card.Block>
                         <Highlight>
-                            {'<Upload preview /> \n'}
-                            {'<Upload preview message="上传图片"><Icon type="plus" /></Upload>\n'}
+                            {`<Upload preview /> \n`}
+                            {`<Upload preview message="上传图片"><Icon type="plus" /></Upload>\n`}
                             {'<Upload src="..." preview />'}
                         </Highlight>
                     </Card>

@@ -1,6 +1,5 @@
 import classnames from 'classnames';
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Notice from './Notice';
 

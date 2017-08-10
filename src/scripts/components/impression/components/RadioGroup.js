@@ -1,13 +1,13 @@
 import classnames from 'classnames';
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, PropTypes } from 'react';
+
 /**
  * RadioGroup组件.
  */
 export default class RadioGroup extends PureComponent {
     // 初始化state
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
         // 是否木偶组件
         this.isPuppet = props.value !== undefined;

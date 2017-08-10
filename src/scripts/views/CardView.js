@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import { Card, Row, Col, Button, Image } from '../components/impression';
 import { CommenTable, Highlight, Breadcrumb } from '../components';
 
@@ -69,10 +68,10 @@ const CardView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'import { Card } from "impression-react";\n\n'}
-                        {'<Card>\n'}
-                        {'  <Card.Block><h4>Title</h4>...</Card.Block>\n'}
-                        {'  <Image fluid src="http://placehold.it/350x200" />\n  ...\n'}
+                        {`import { Card } from 'impression-react';\n\n`}
+                        {`<Card>\n`}
+                        {`  <Card.Block><h4>Title</h4>...</Card.Block>\n`}
+                        {`  <Image fluid src="http://placehold.it/350x200" />\n  ...\n`}
                         {'</Card>'}
                     </Highlight>
                 </Card>
@@ -125,8 +124,8 @@ const CardView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'<Card>...</Card>\n'}
-                        {'<Card className="text-center">..</Card>\n'}
+                        {`<Card>...</Card>\n`}
+                        {`<Card className="text-center">..</Card>\n`}
                         {'<Card className="text-right">...</Card>'}
                     </Highlight>
                 </Card>
@@ -192,10 +191,10 @@ const CardView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'<Card>\n'}
-                        {'  <Card.Header>Header</Card.Header>\n'}
-                        {'  <Card.Block>...</Card.Block>\n'}
-                        {'  <Card.Footer>footer</Card.Footer>\n'}
+                        {`<Card>\n`}
+                        {`  <Card.Header>Header</Card.Header>\n`}
+                        {`  <Card.Block>...</Card.Block>\n`}
+                        {`  <Card.Footer>footer</Card.Footer>\n`}
                         {'</Card>'}
                     </Highlight>
                 </Card>

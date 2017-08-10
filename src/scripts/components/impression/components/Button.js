@@ -1,6 +1,6 @@
 import classnames from 'classnames';
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, PropTypes } from 'react';
+
 /**
  * 按钮组件.
  */
@@ -51,9 +51,15 @@ export default class Button extends PureComponent {
                 close,
                 block,
                 children,
-                ...others
+                ...others,
             } = this.props,
-            { Tag } = this.state;
+            { Tag } = this.state,
+            btnClass = !close ? 'btn' : null,
+            themeClass = !close ? `btn${outline ? '-outline' : ''}-${theme}` : null,
+            sizeClass = size ? `btn-${size}` : null,
+            shapeClass = shape ? `btn-${shape}` : null,
+            closeClass = close ? 'close' : null,
+            blockClass = block ? 'btn-block' : null;
 
         delete others.eventKey;
 
@@ -64,12 +70,12 @@ export default class Button extends PureComponent {
                 onClick={onClick}
                 href={href}
                 className={classnames(
-                    !close && 'btn',
-                    !close && `btn${outline ? '-outline' : ''}-${theme}`,
-                    size && `btn-${size}`,
-                    shape && `btn-${shape}`,
-                    close && 'close',
-                    block && 'btn-block',
+                    btnClass,
+                    themeClass,
+                    sizeClass,
+                    shapeClass,
+                    closeClass,
+                    blockClass,
                     className)}>
                 {children}
             </Tag>

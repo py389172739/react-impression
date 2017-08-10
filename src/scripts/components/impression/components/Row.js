@@ -1,6 +1,6 @@
 import classnames from 'classnames';
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, PropTypes } from 'react';
+
 /**
  * Row组件.
  */
@@ -27,7 +27,7 @@ export default class Row extends PureComponent {
             if(child.props.hasOwnProperty('col')) {
                 count += Number.parseInt(child.props.col, 10);
             }else{
-                allocation += 1; // 校验
+                allocation += 1;
             }
         });
 

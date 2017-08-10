@@ -1,6 +1,5 @@
 import classnames from 'classnames';
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, PropTypes } from 'react';
 import DropdownTrigger from './DropdownTrigger';
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuItem from './DropdownMenuItem';

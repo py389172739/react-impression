@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, PropTypes } from 'react';
 import { Card, Row, Col, Button, Alert, Input } from '../components/impression';
 import { Highlight, Breadcrumb } from '../components';
 
@@ -46,8 +45,8 @@ export default class AlertView extends Component {
                             </Row>
                         </Card.Block>
                         <Highlight>
-                            {'import { Alert } from "impression-react";\n\n'}
-                            {'<Alert>姓名不能为空！</Alert>\n'}
+                            {`import { Alert } from 'impression-react';\n\n`}
+                            {`<Alert>姓名不能为空！</Alert>\n`}
                             {'<Alert btnText="关闭"  type="danger">请先选择所属城市！</Alert>'}
                         </Highlight>
                     </Card>

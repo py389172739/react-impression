@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import { Card, Row, Col, Nav } from '../components/impression';
 import { CommenTable, Highlight, Breadcrumb } from '../components';
 
@@ -23,9 +22,9 @@ const NavView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'import { Nav } from "impression-react";\n\n'}
-                        {'<Nav activeKey={1} type="inline">\n'}
-                        {'  <Nav.Item eventKey={1}>Active</Nav.Item>\n   ...\n'}
+                        {`import { Nav } from 'impression-react';\n\n`}
+                        {`<Nav activeKey={1} type="inline">\n`}
+                        {`  <Nav.Item eventKey={1}>Active</Nav.Item>\n   ...\n`}
                         {'</Nav>'}
                     </Highlight>
                 </Card>
@@ -44,8 +43,8 @@ const NavView = ({ routes }) => {
                         </Row>
                     </Card.Block>
                     <Highlight>
-                        {'<Nav activeKey={1} type="tab">\n  ...\n'}
-                        {'  <Nav.Item eventKey={4} disabled>Disabled</Nav.Item>\n'}
+                        {`<Nav activeKey={1} type="tab">\n  ...\n`}
+                        {`  <Nav.Item eventKey={4} disabled>Disabled</Nav.Item>\n`}
                         {'</Nav>'}
                     </Highlight>
                 </Card>

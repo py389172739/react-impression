@@ -1,6 +1,6 @@
 import classnames from 'classnames';
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent, PropTypes } from 'react';
+
 /**
  * Switch组件.
  */
@@ -23,15 +23,6 @@ export default class Switch extends PureComponent {
     static defaultProps = {
         disabled: false,
     }
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            time: (new Date()).valueOf() + Math.ceil(Math.random() * 10), // 设置radio id时间戳 ？
-        };
-    }
-
     getValue() {
         let { value } = this.props,
             { main } = this.refs;
@@ -54,17 +45,15 @@ export default class Switch extends PureComponent {
 
         onChange(checked, event);
     }
-
     // 渲染
     render() {
-        let { checked, defaultChecked, onChange, disabled, className, ...others } = this.props,
-            { time } = this.state;
+        let { checked, defaultChecked, onChange, disabled, className, ...others } = this.props;
 
         return(
             <label
                 {...others}
                 className={classnames('switch', className)}
-                htmlFor={`switch${time}`}>
+                htmlFor={`switch${this._reactInternalInstance._mountOrder}`}>
                 <input
                     ref="main"
                     type="checkbox"
@@ -72,7 +61,7 @@ export default class Switch extends PureComponent {
                     defaultChecked={defaultChecked}
                     disabled={disabled}
                     onChange={onChange && this.onChangeHandle}
-                    id={`switch${time}`} />
+                    id={`switch${this._reactInternalInstance._mountOrder}`} />
                 <div className="switch-addon" />
             </label>
         );
