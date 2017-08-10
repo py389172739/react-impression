@@ -15,3 +15,11 @@ export const isDescendentNode = (ancestor, descendent) => {
     }
     return false;
 };
+
+export const stopPropagation = () => {
+    if (document.body.style.overflow !== 'hidden') {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+};
