@@ -43,6 +43,11 @@ export default class Input extends PureComponent {
         children: PropTypes.element,
         // 是否椭圆形
         pill: PropTypes.bool,
+        // texrarea下行数
+        rows: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
         // 点击事件
         onClick: PropTypes.func,
         // onChange
@@ -53,6 +58,7 @@ export default class Input extends PureComponent {
         type: 'text',
         clearable: true,
         disabled: false,
+        rows: 10,
     }
     // 获取Input value
     getValue() {
@@ -153,6 +159,7 @@ export default class Input extends PureComponent {
                 clearable,
                 style,
                 pill,
+                rows,
                 onClick,
                 className,
                 children,
@@ -246,18 +253,22 @@ export default class Input extends PureComponent {
                 );
             case 'textarea':
                 return (
-                    <textarea
-                        rows="10"
-                        ref={ref => (this.refMain = ref)}
-                        style={style}
-                        disabled={disabled}
-                        placeholder={placeholder}
-                        value={value}
-                        onChange={e => onChange && onChange(e.target.value, e)}
-                        defaultValue={defaultValue}
-                        {...others}
-                        className={classnames('form-control', className)}
-                    />
+                    <div
+                        className={classnames('input', className)}
+                        ref="container">
+                        <textarea
+                            rows={rows}
+                            ref={ref => (this.refMain = ref)}
+                            style={style}
+                            disabled={disabled}
+                            placeholder={placeholder}
+                            value={value}
+                            onChange={e => onChange && onChange(e.target.value, e)}
+                            defaultValue={defaultValue}
+                            {...others}
+                            className="form-control"
+                        />
+                    </div>
                 );
             default:
                 return (
